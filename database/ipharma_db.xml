@@ -1,0 +1,288 @@
+<changelog xmlns="http://www.codesynthesis.com/xmlns/odb/changelog" database="pgsql" schema-name="ipharma" version="1">
+  <model version="1">
+    <table name="inventory" kind="object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="date_started" type="TIMESTAMP" null="false" default="'now()'"/>
+      <column name="date_ended" type="TIMESTAMP" null="true" options="CHECK(date_ended_ > date_started_)"/>
+      <column name="report" type="TEXT" null="true"/>
+      <column name="responsable" type="INTEGER" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="responsable_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="responsable"/>
+        <references table="personnel">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="responsable-date_started_i" type="UNIQUE">
+        <column name="responsable"/>
+        <column name="date_started"/>
+      </index>
+    </table>
+    <table name="personne" kind="polymorphic root object">
+      <column name="id" type="INTEGER" null="false"/>
+      <column name="typeid" type="TEXT" null="false"/>
+      <column name="noms" type="TEXT" null="false"/>
+      <column name="prenoms" type="TEXT" null="false"/>
+      <column name="adresse" type="TEXT" null="true"/>
+      <column name="tel" type="TEXT" null="false"/>
+      <column name="email" type="TEXT" null="true"/>
+      <column name="cni" type="TEXT" null="true"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <index name="personne_tel_i" type="UNIQUE">
+        <column name="tel"/>
+      </index>
+      <index name="personne_cni_i" type="UNIQUE">
+        <column name="cni"/>
+      </index>
+      <index name="personne_email_i" type="UNIQUE">
+        <column name="email"/>
+      </index>
+      <index name="noms_prenoms_cni_i" type="UNIQUE">
+        <column name="noms"/>
+        <column name="prenoms"/>
+        <column name="cni"/>
+      </index>
+      <index name="noms_prenoms_adresse_i" type="UNIQUE">
+        <column name="noms"/>
+        <column name="prenoms"/>
+        <column name="adresse"/>
+      </index>
+    </table>
+    <table name="fonction" kind="object">
+      <column name="id" type="INTEGER" null="false"/>
+      <column name="libele" type="TEXT" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <index name="fonction_libele_i" type="UNIQUE">
+        <column name="libele"/>
+      </index>
+    </table>
+    <table name="personnel" kind="polymorphic derived object">
+      <column name="id" type="INTEGER" null="false"/>
+      <column name="matricule" type="VARCHAR(10)" null="true"/>
+      <column name="date_naissance" type="DATE" null="true"/>
+      <column name="date_embauche" type="DATE" null="true"/>
+      <column name="salaire" type="INTEGER" null="false"/>
+      <column name="fonction" type="INTEGER" null="true"/>
+      <primary-key>
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="id_fk" on-delete="CASCADE">
+        <column name="id"/>
+        <references table="personne">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <foreign-key name="fonction_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="fonction"/>
+        <references table="fonction">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="personnel_matricule_i" type="UNIQUE">
+        <column name="matricule"/>
+      </index>
+    </table>
+    <table name="inventoryitem" kind="object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="qte_theo_gros" type="INTEGER" null="false"/>
+      <column name="qte_theo_details" type="INTEGER" null="false"/>
+      <column name="qte_phys_gros" type="INTEGER" null="false"/>
+      <column name="qte_phys_details" type="INTEGER" null="false"/>
+      <column name="qte_ajoute_gros" type="INTEGER" null="false"/>
+      <column name="qte_ajoute_details" type="INTEGER" null="false"/>
+      <column name="justification" type="TEXT" null="true"/>
+      <column name="produit" type="BIGINT" null="false"/>
+      <column name="inventory" type="BIGINT" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="produit_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="produit"/>
+        <references table="produit">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <foreign-key name="inventory_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="inventory"/>
+        <references table="inventory">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="produit-inventory_i" type="UNIQUE">
+        <column name="produit"/>
+        <column name="inventory"/>
+      </index>
+    </table>
+    <table name="produit" kind="polymorphic root object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="typeid" type="TEXT" null="false"/>
+      <column name="libele" type="TEXT" null="false"/>
+      <column name="codebare" type="TEXT" null="true"/>
+      <column name="image_path" type="TEXT" null="true"/>
+      <column name="prix_vente" type="BIGINT" null="false"/>
+      <column name="prix_achat_moy" type="DOUBLE PRECISION" null="false"/>
+      <column name="remise" type="REAL" null="false"/>
+      <column name="qte_colise" type="REAL" null="false"/>
+      <column name="qte_gros" type="INTEGER" null="false"/>
+      <column name="qte_details" type="INTEGER" null="false"/>
+      <column name="active" type="BOOLEAN" null="false"/>
+      <column name="parent" type="BIGINT" null="true"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="parent_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="parent"/>
+        <references table="produit">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="produit_libele_i" type="UNIQUE">
+        <column name="libele"/>
+      </index>
+      <index name="produit_codebare_i" type="UNIQUE">
+        <column name="codebare"/>
+      </index>
+    </table>
+    <table name="prixfourn" kind="object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="prix" type="DOUBLE PRECISION" null="false" options="CHECK(prix > 0)"/>
+      <column name="date_effet" type="DATE" null="false" default="'now()'" options="CHECK(date_effet &lt;= CURRENT_DATE)"/>
+      <column name="produit" type="BIGINT" null="false"/>
+      <column name="fournisseur" type="BIGINT" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="produit_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="produit"/>
+        <references table="produit">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <foreign-key name="fournisseur_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="fournisseur"/>
+        <references table="fournisseur">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="produit-fournisseur-date_effet_i" type="UNIQUE">
+        <column name="produit"/>
+        <column name="fournisseur"/>
+        <column name="date_effet"/>
+      </index>
+    </table>
+    <table name="fournisseur" kind="object">
+      <column name="id" type="BIGINT" null="false"/>
+      <column name="nom" type="TEXT" null="false"/>
+      <column name="tel" type="TEXT" null="false"/>
+      <column name="initiale" type="TEXT" null="false"/>
+      <column name="type_fourn" type="TEXT" null="false"/>
+      <column name="email" type="TEXT" null="true"/>
+      <column name="description" type="TEXT" null="true"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <index name="fournisseur_nom_i" type="UNIQUE">
+        <column name="nom"/>
+      </index>
+      <index name="fournisseur_tel_i" type="UNIQUE">
+        <column name="tel"/>
+      </index>
+      <index name="fournisseur_initiale_i" type="UNIQUE">
+        <column name="initiale"/>
+      </index>
+      <index name="fournisseur_email_i" type="UNIQUE">
+        <column name="email"/>
+      </index>
+    </table>
+    <table name="tonnage" kind="object">
+      <column name="id" type="INTEGER" null="false"/>
+      <column name="nb_unite" type="INTEGER" null="false" options="CHECK(nb_unite > 0)"/>
+      <column name="qte_par_unite" type="INTEGER" null="false" default="'1'" options="CHECK(qte_par_unite > 0)"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <index name="nb_unite-qte_par_unite_i" type="UNIQUE">
+        <column name="nb_unite"/>
+        <column name="qte_par_unite"/>
+      </index>
+    </table>
+    <table name="tonnage_produits" kind="container">
+      <column name="object_id" type="INTEGER" null="false"/>
+      <column name="index" type="BIGINT" null="false"/>
+      <column name="value" type="BIGINT" null="false"/>
+      <foreign-key name="object_id_fk" on-delete="CASCADE">
+        <column name="object_id"/>
+        <references table="tonnage">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="tonnage_produits_object_id_i">
+        <column name="object_id"/>
+      </index>
+      <index name="tonnage_produits_index_i">
+        <column name="index"/>
+      </index>
+      <foreign-key name="value_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="value"/>
+        <references table="produit">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+    </table>
+    <table name="tonnage_emballages" kind="container">
+      <column name="object_id" type="INTEGER" null="false"/>
+      <column name="index" type="BIGINT" null="false"/>
+      <column name="value" type="TEXT" null="false"/>
+      <foreign-key name="object_id_fk" on-delete="CASCADE">
+        <column name="object_id"/>
+        <references table="tonnage">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="tonnage_emballages_object_id_i">
+        <column name="object_id"/>
+      </index>
+      <index name="tonnage_emballages_index_i">
+        <column name="index"/>
+      </index>
+      <foreign-key name="value_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="value"/>
+        <references table="emballage">
+          <column name="libele"/>
+        </references>
+      </foreign-key>
+    </table>
+    <table name="emballage" kind="object">
+      <column name="libele" type="TEXT" null="false"/>
+      <column name="description" type="TEXT" null="true"/>
+      <primary-key>
+        <column name="libele"/>
+      </primary-key>
+    </table>
+    <table name="histprix" kind="object">
+      <column name="id" type="INTEGER" null="false"/>
+      <column name="prix_vente" type="BIGINT" null="false"/>
+      <column name="date_fin" type="DATE" null="false" default="'now()'" options="CHECK(date_fin &lt;= CURRENT_DATE)"/>
+      <column name="produit" type="BIGINT" null="false"/>
+      <primary-key auto="true">
+        <column name="id"/>
+      </primary-key>
+      <foreign-key name="produit_fk" deferrable="DEFERRED" on-delete="CASCADE">
+        <column name="produit"/>
+        <references table="produit">
+          <column name="id"/>
+        </references>
+      </foreign-key>
+      <index name="produit-date_fin_i" type="UNIQUE">
+        <column name="produit"/>
+        <column name="date_fin"/>
+      </index>
+    </table>
+  </model>
+</changelog>

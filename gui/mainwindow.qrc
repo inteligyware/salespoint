@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/images">
+        <file alias="fermer">images/changes-allow.png</file>
+        <file alias="cadenas">images/changes-prevent.png</file>
+        <file alias="paiement">images/paiement.png</file>
+        <file alias="user">images/user.png</file>
+        <file alias="sale">images/sale.png</file>
+        <file alias="stat">images/stat.png</file>
+        <file alias="stock">images/stock.png</file>
+        <file alias="recherche">images/recherche.png</file>
+        <file alias="help">images/help.png</file>
+    </qresource>
+</RCC>

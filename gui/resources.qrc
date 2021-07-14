@@ -1,0 +1,27 @@
+<RCC>
+    <qresource prefix="/main">
+        <file alias="logo.png">icons/logo/ise.png</file>
+        <file alias="down_arrow">icons/signals/gtk-go-down.png</file>
+        <file alias="up_arrow">icons/signals/gtk-go-up.png</file>
+    </qresource>
+    <qresource prefix="/backgroung">
+        <file alias="bgimage">icons/background/index.jpeg</file>
+        <file alias="total">icons/background/total.jpeg</file>
+    </qresource>
+    <qresource prefix="/sales">
+        <file alias="search.png">icons/signals/gnome-search-tool_system-search.png</file>
+        <file alias="cancel.png">icons/signals/dialog-cancel.png</file>
+        <file alias="add.png">icons/signals/list-add.png</file>
+        <file alias="delete.png">icons/signals/list-delete.png</file>
+        <file alias="validate.png">icons/signals/alertmessage-success.png</file>
+        <file alias="total.jpg">icons/signals/total.jpg</file>
+    </qresource>
+    <qresource prefix="/product">
+        <file alias="cancel.png">icons/signals/dialog-cancel.png</file>
+        <file alias="clear.png">icons/signals/clear.png</file>
+        <file alias="validate.png">icons/signals/alertmessage-success.png</file>
+    </qresource>
+    <qresource prefix="/report">
+        <file alias="refresh.png">icons/toolbox/update_small.png</file>
+    </qresource>
+</RCC>

@@ -1,40 +1,40 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-07-18T18:25:12
+# Project created by QtCreator 2017-02-02T09:56:37
 #
 #-------------------------------------------------
 
-QT      -= gui
-TARGET   = inventaires
+greaterThan(QT_MAJOR_VERSION, 4): QT += printsupport
+
+TARGET = docsrelances
+
 TEMPLATE = lib
-DEFINES += INVENTAIRES_LIBRARY
+
+DEFINES += DOCSRELANCES_LIBRARY
 
 SOURCES +=\
-    inventory.cpp \
-    inventory_item.cpp
+    document.cpp \
+    relancable.cpp \
+    relance.cpp
 
-HEADERS  += \
-    inventory.h \
-    inventory_item.h
+HEADERS +=\
+    document.h \
+    relancable.h \
+    relance.h
 
 unix {
-    target.path = /usr/lib
+    target.path = /usr/local/salespoint/lib
     INSTALLS += target
 }
-
-INCLUDEPATH +=\
-    ../produits \
-    ../personnels \
-    .. \
-    .
 
 ##ODB parameters starts here
 
 # List of header files that should be compiled with the ODB compiler.
 #
 ODB_FILES +=\
-    inventory.hxx \
-    inventory_item.hxx
+    document.hxx \
+    relancable.hxx \
+    relance.hxx
 
 # ODB compiler flags.
 #
@@ -81,6 +81,7 @@ odb.variable_out = SOURCES
 odb.clean = ${QMAKE_FILE_BASE}-odb.cxx ${QMAKE_FILE_BASE}-odb.hxx ${QMAKE_FILE_BASE}-odb.ixx ${QMAKE_FILE_BASE}.sql
 QMAKE_EXTRA_COMPILERS += odb
 
+
 odbh.name = odb ${QMAKE_FILE_IN}
 odbh.input = ODB_PWD_FILES
 odbh.output = ${QMAKE_FILE_BASE}-odb.hxx
@@ -88,3 +89,11 @@ odbh.commands = @true
 odbh.CONFIG = no_link
 odbh.depends = ${QMAKE_FILE_BASE}-odb.cxx
 QMAKE_EXTRA_COMPILERS += odbh
+
+odbi.name = odb ${QMAKE_FILE_IN}
+odbi.input = ODB_PWD_FILES
+odbi.output = ${QMAKE_FILE_BASE}-odb.ixx
+odbi.commands = @true
+odbi.CONFIG = no_link
+odbi.depends = ${QMAKE_FILE_BASE}-odb.cxx
+QMAKE_EXTRA_COMPILERS += odbi

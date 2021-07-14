@@ -1,40 +1,41 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-07-18T18:25:12
+# Project created by QtCreator 2017-02-02T10:06:13
 #
 #-------------------------------------------------
 
-QT      -= gui
-TARGET   = inventaires
+QT       -= gui
+
+TARGET = personnels
+
 TEMPLATE = lib
-DEFINES += INVENTAIRES_LIBRARY
 
-SOURCES +=\
-    inventory.cpp \
-    inventory_item.cpp
+DEFINES += PERSONNELS_LIBRARY
 
-HEADERS  += \
-    inventory.h \
-    inventory_item.h
+SOURCES += \
+    personne.cpp \
+    personnel.cpp \
+    fonction.cpp
+
+HEADERS += \
+    personne.h \
+    personnel.h \
+    fonction.h
 
 unix {
-    target.path = /usr/lib
+    target.path = /usr/local/salespoint/lib
     INSTALLS += target
 }
-
-INCLUDEPATH +=\
-    ../produits \
-    ../personnels \
-    .. \
-    .
 
 ##ODB parameters starts here
 
 # List of header files that should be compiled with the ODB compiler.
-#
+
 ODB_FILES +=\
-    inventory.hxx \
-    inventory_item.hxx
+    personne.hxx \
+    fonction.hxx \
+    personnel.hxx
+
 
 # ODB compiler flags.
 #
@@ -45,29 +46,26 @@ ODB_FLAGS =\
     --profile qt \
     --default-pointer QSharedPointer \
     --generate-query \
+    --generate-schema \
     --generate-session
 
 QMAKE_CXXFLAGS += -std=c++11
-# Suppress unknown pragmas GCC warnings.
 
+# Suppress unknown pragmas GCC warnings.
 QMAKE_CXXFLAGS_WARN_ON += -Wno-unknown-pragmas -Wno-deprecated-declarations
 
 # Link to the ODB runtime libraries.
-#
 #LIBS += -lodb-pgsql
 #LIBS += -lodb-qt
 #LIBS += -lodb
 
 # ODB compilation rules. Normally you don't need to change anything here.
-#
 
 # Add the Qt headers directory to the ODB include directory list.
-#
 ODB_FLAGS += -I$$[QT_INSTALL_HEADERS]
 
 # Newer versions of QtCreator do builds in a separate directory. As a
 # result, we need to append the source directory to ODB files.
-#
 for(dir, ODB_FILES) {
   ODB_PWD_FILES += $$PWD/$${dir}
 }
@@ -86,5 +84,6 @@ odbh.input = ODB_PWD_FILES
 odbh.output = ${QMAKE_FILE_BASE}-odb.hxx
 odbh.commands = @true
 odbh.CONFIG = no_link
-odbh.depends = ${QMAKE_FILE_BASE}-odb.cxx
+odb.depends = $$ODB_PWD_FILES
+#odbh.depends = ${QMAKE_FILE_BASE}-odb.cxx
 QMAKE_EXTRA_COMPILERS += odbh
