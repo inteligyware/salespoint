@@ -2,7 +2,7 @@ QT       += core network gui sql printsupport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = salespointi7
+TARGET = salespoint
 CONFIG -= app_bundle
 TEMPLATE = app
 
