@@ -46,6 +46,7 @@ It's very simple and quick to compile and install salespoint from source.
 	.QMake and qt5 
 	.odb c++ orm compiler .gcc 8.0 .the above mentioned libraries
 clone this repository:
+
 	git clone https://github.com/inteligyware/salespoint.git
 	
 It will create a salespoint directory. Enter at the directory and run
