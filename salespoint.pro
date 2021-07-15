@@ -2,7 +2,7 @@
 # Subdirectories relative to principal directory of salespoint: .
 
 DISTFILES += AUTHORS \
-             COPYING \
+             LICENSE \
              README.md
 
 SUBDIRS +=  \
