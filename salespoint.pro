@@ -1,4 +1,4 @@
-# ------------------------------------------- 
+# ---------------------------------------------------------------
 # Subdirectories relative to principal directory of salespoint: .
 
 DISTFILES += AUTHORS \

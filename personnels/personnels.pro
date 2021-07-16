@@ -46,7 +46,6 @@ ODB_FLAGS =\
     --profile qt \
     --default-pointer QSharedPointer \
     --generate-query \
-    --generate-schema \
     --generate-session
 
 QMAKE_CXXFLAGS += -std=c++11
