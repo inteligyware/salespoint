@@ -206,11 +206,6 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf \
 		gui.pro models.h \
 		views.h \
-		ui_salesdialog.h \
-		ui_reportingdialog.h \
-		ui_productcreationform.h \
-		ui_familycreationform.h \
-		ui_tabdialog.h \
 		salesdialog.h \
 		delegates.h \
 		toolkit.h \
@@ -450,7 +445,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents resources.qrc mainwindow.qrc $(DISTDIR)/
 	$(COPY_FILE) --parents /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents models.h views.h ui_salesdialog.h ui_reportingdialog.h ui_productcreationform.h ui_familycreationform.h ui_tabdialog.h salesdialog.h delegates.h toolkit.h mainwindow.h reportingdialog.h tabdialog.h familycreationform.h datafetcherthread.h productfamily.h productcreationform.h $(DISTDIR)/
+	$(COPY_FILE) --parents models.h views.h salesdialog.h delegates.h toolkit.h mainwindow.h reportingdialog.h tabdialog.h familycreationform.h datafetcherthread.h productfamily.h productcreationform.h $(DISTDIR)/
 	$(COPY_FILE) --parents sortiemodel.cpp listingdialog.cpp salesdialog.cpp salesmodel.cpp attentemodel.cpp numberdelegate.cpp toolkit.cpp mainwindow.cpp listingmodel.cpp abstractodbmodel.cpp odbproductmodel.cpp reportingdialog.cpp tabdialog.cpp saleslistingmodel.cpp datafetcherthread.cpp productfamily.cpp productcreationform.cpp productlistingdialog.cpp uniqueproxymodel.cpp qproductmodel.cpp familycreationform.cpp familylistingdialog.cpp datefilterproxymodel.cpp retailableproductproxymodel.cpp odbfamilymodel.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents salesdialog.ui mainwindow.ui tabdialog.ui products/productcreation.ui productcreationform.ui groupedproductcreationform.ui familycreationform.ui $(DISTDIR)/
 

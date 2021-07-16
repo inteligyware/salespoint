@@ -19,7 +19,7 @@ SUBDIRS +=  \
             docsrelances \
             gui \
             sortiesventes \
-            ipharma
-#            inventaires
+            ipharma \
+            inventaires
 QMAKE_CXXFLAGS += -std=c++11
 TEMPLATE =  subdirs

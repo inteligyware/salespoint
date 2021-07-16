@@ -92,7 +92,7 @@ void ReportingDialog::setAlignmentsForQuery(int queryindex , const QList<int>& c
     listingmodels[queryindex]->setAlignments(columns,algnmt);
 }
 
-void ReportingDialog::setColumnsStrechForForQuery(int index , const QList<float> &strech){
+void ReportingDialog::setColumnsStrechForQuery(int index , const QList<float> &strech){
     if(index == strechs.size()) strechs.push_back(new QList<float>());
     if(index >=0 && index < strechs.size())
          *strechs.at(index) = strech;

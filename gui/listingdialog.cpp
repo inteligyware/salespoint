@@ -15,6 +15,7 @@
 #include <QStyledItemDelegate>
 #include <QScrollBar>
 #include <QResizeEvent>
+#include <QAction>
 
 const int ListingDialog::WIDTH = 100;
 const int ListingDialog::HEIGT = 400;

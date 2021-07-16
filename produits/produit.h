@@ -131,6 +131,9 @@ public:
     bool isMedicament() const ;
 //    void setActive(bool active);
 //    bool isActive() const;
+    void desactivate();
+    quint32 getQteGros();
+    quint32 getQteDetails();
 };
 
 struct DBViewProduits{

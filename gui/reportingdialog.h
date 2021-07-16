@@ -19,7 +19,7 @@ public:
     void setQueryComboboxEnabled(bool enabled);
     void setFieldComboboxEnabled(bool enabled);
 
-    void setColumnsStrechForForQuery(int index, const QList<float>& strech);
+    void setColumnsStrechForQuery(int index, const QList<float>& strech);
 
     QTreeView* view();
     const QSortFilterProxyModel* proxyModel() const ;

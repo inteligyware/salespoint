@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "delegates.h"
 #include <QMessageBox>
-//darkgray
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
@@ -84,9 +83,9 @@ ListingDialog* MainWindow::makeProductDialog(FamilyCreationForm* form){
 //    QSqlQuery query("SELECT COUNT(*) FROM produit;");
 //    query.exec();
 
-    auto productmodel = new QProductModel(this);
-//    auto  productmodel = new ODBProductModel(this);
-//    productmodel->load();
+//    auto productmodel = new QProductModel(this);
+    auto  productmodel = new ODBProductModel(this);
+    productmodel->load();
 
     ListingDialog* productdlg = new ProductListingDialog(productmodel, ODBProductModel::DESIGNATION , form, this);
     productdlg->setColumnHidden(QProductModel::ID_PRODUIT,true);

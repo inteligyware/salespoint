@@ -258,6 +258,18 @@ bool Produit::isMedicament() const {
     return type().contains("Medicament", Qt::CaseInsensitive);
 }
 
+void Produit::desactivate(){
+    return ;
+}
+
+quint32 Produit::getQteGros(){
+    return numeric_limits<int>::max();
+}
+
+quint32 Produit::getQteDetails(){
+   return numeric_limits<int>::max();
+}
+
 void Produit::setHistPrix(const LWPHistPrix& hist_prix){
     hist_prixs_.push_back(hist_prix);
 }

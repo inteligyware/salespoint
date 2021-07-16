@@ -44,11 +44,6 @@ SOURCES += \
 HEADERS +=\
     models.h \
     views.h \
-    ui_salesdialog.h \
-    ui_reportingdialog.h \
-    ui_productcreationform.h \
-    ui_familycreationform.h \
-    ui_tabdialog.h \
     salesdialog.h \
     delegates.h \
     toolkit.h \
@@ -60,6 +55,11 @@ HEADERS +=\
     productfamily.h \
     productcreationform.h
 
+#    ui_salesdialog.h \
+#    ui_reportingdialog.h \
+#    ui_productcreationform.h \
+#    ui_familycreationform.h \
+#    ui_tabdialog.h \
 #    ui_mainwindow.h \
 #    ui_sessionmanager.h \
 #    sessionmanager.h \
