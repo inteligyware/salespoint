@@ -8,7 +8,6 @@
 #ifndef _FOURNISSEUR_H
 #define _FOURNISSEUR_H
 
-
 #include <QtCore/QString>
 #include <QtCore/QDate>
 #include <QtCore/QSharedPointer>

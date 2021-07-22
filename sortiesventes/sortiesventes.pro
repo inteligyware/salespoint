@@ -8,7 +8,7 @@ QT       -= gui
 
 TARGET = ventes
 TEMPLATE = lib
-
+VERSION = 0.1
 DEFINES += SORTIESVENTES_LIBRARY
 
 SOURCES +=\
@@ -71,8 +71,8 @@ ODB_FLAGS =\
     --database pgsql \
     --sql-name-case lower \
     --profile qt \
-    --default-pointer QSharedPointer \
-    --hxx-prologue-file "../pointer-par-defaut.hxx" \
+    --hxx-prologue-file "../default_ptr.hxx" \
+    --hxx-prologue-file "../default_ptr.hxx" \
     --generate-query \
     --generate-session
 

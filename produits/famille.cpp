@@ -76,11 +76,11 @@ void Famille::setChildren(const SPFamille& child){
     if(!exist) children_.push_back(child);
 }
 
-const odb::vector<SPFamille>& Famille::getChildren() const{
+odb::vector<SPFamille> Famille::getChildren() const{
     odb::vector<SPFamille> children;
     for (auto var: children_)
        children.push_back(var.load());
-    return move(children);
+    return children;
 }
 
 void Famille::setParent(const SPFamille& parent){
@@ -98,8 +98,8 @@ const SPFamille& Famille::parent() const{
     return getParent();
 }
 
-const SPFamille& Famille::childAt(int pos) const {
-          return move(children_[pos].load());
+SPFamille Famille::childAt(int pos) const {
+          return children_[pos].load();
  }
 
 bool Famille::isChild() const{

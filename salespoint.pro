@@ -5,6 +5,7 @@ DISTFILES += AUTHORS \
              LICENSE \
              README.md
 
+#sub projects
 SUBDIRS +=  \
 #            admin \
 #            caisse \
@@ -21,5 +22,10 @@ SUBDIRS +=  \
             sortiesventes \
             ipharma \
             inventaires
-QMAKE_CXXFLAGS += -std=c++11
+
+ipharma.depends = gui sortiesventes produits docsrelances personnels inventaires
+gui.depends = sortiesventes produits docsrelances personnels inventaires
+sortiesventes.depends =  produits personnels docsrelances
+inventaires.depends = produits personnels
+
 TEMPLATE =  subdirs

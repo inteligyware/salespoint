@@ -63,7 +63,41 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
@@ -95,6 +129,8 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -108,6 +144,9 @@ DIST          = /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
@@ -152,7 +191,41 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
@@ -184,6 +257,8 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -197,6 +272,9 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
@@ -231,7 +309,41 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
@@ -263,6 +375,8 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
@@ -276,6 +390,9 @@ Makefile: ipharma.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.c
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf:
@@ -320,6 +437,7 @@ distdir: FORCE
 
 clean: compiler_clean 
 	-$(DEL_FILE) $(OBJECTS)
+	-$(DEL_FILE) salespoint
 	-$(DEL_FILE) *~ core *.core
 
 
@@ -393,18 +511,9 @@ main.o: main.cpp ../include/produits.h \
 		../include/produits/histprix-odb.hxx \
 		../include/produits/prixfourn-odb.hxx \
 		../include/produits/tonnage-odb.hxx \
-		../produits/tonnage-odb.ixx \
-		../produits/prixfourn-odb.ixx \
-		../produits/histprix-odb.ixx \
-		../produits/fournisseur-odb.ixx \
-		../produits/emballage-odb.ixx \
-		../produits/produit-odb.ixx \
 		../include/produits/medicament-odb.hxx \
-		../produits/medicament-odb.ixx \
 		../include/produits/article-odb.hxx \
 		../include/produits/famille-odb.hxx \
-		../produits/famille-odb.ixx \
-		../produits/article-odb.ixx \
 		../include/produits/vues-odb.hxx \
 		../produits/vues-odb.ixx \
 		../include/ventes.h \
@@ -432,120 +541,54 @@ main.o: main.cpp ../include/produits.h \
 		../include/sortiesventes/reglement.h \
 		../include/sortiesventes/detailssortie.hxx \
 		../include/sortiesventes/detailssortie.h \
-		../docsrelances/document-odb.hxx \
-		../docsrelances/document.hxx \
-		../docsrelances/document.h \
-		../docsrelances/document-odb.ixx \
 		../include/docsrelances/relancable-odb.hxx \
 		../include/docsrelances/document-odb.hxx \
 		../include/docsrelances/relance-odb.hxx \
-		../docsrelances/relance-odb.ixx \
-		../docsrelances/relancable-odb.ixx \
-		../docsrelances/relance-odb.hxx \
-		../docsrelances/relance.hxx \
-		../docsrelances/relance.h \
-		../docsrelances/relancable.hxx \
-		../docsrelances/relancable.h \
-		../docsrelances/relancable-odb.hxx \
-		../personnels/fonction-odb.hxx \
-		../personnels/fonction.hxx \
-		../personnels/fonction.h \
-		../personnels/fonction-odb.ixx \
-		../personnels/personne-odb.hxx \
-		../personnels/personne.hxx \
-		../personnels/personne.h \
-		../personnels/personne-odb.ixx \
 		../include/personnels/personnel-odb.hxx \
 		../include/personnels/fonction-odb.hxx \
 		../include/personnels/personne-odb.hxx \
-		../personnels/personnel-odb.ixx \
-		../produits/emballage-odb.hxx \
-		../produits/emballage.hxx \
-		../produits/emballage.h \
-		../produits/types.h \
-		../produits/tonnage.hxx \
-		../produits/tonnage.h \
-		../produits/produit.hxx \
-		../produits/produit.h \
-		../produits/prixfourn.hxx \
-		../produits/prixfourn.h \
-		../produits/fournisseur.hxx \
-		../produits/fournisseur.h \
-		../produits/histprix.hxx \
-		../produits/histprix.h \
-		../produits/fournisseur-odb.hxx \
-		../produits/histprix-odb.hxx \
-		../produits/prixfourn-odb.hxx \
-		../produits/produit-odb.hxx \
-		../produits/tonnage-odb.hxx \
 		../include/sortiesventes/detailssortie-odb.hxx \
 		../include/sortiesventes/facture-odb.hxx \
 		../include/sortiesventes/reglement-odb.hxx \
 		../include/sortiesventes/sortie-odb.hxx \
-		../sortiesventes/sortie-odb.ixx \
-		../sortiesventes/reglement-odb.ixx \
-		../sortiesventes/facture-odb.ixx \
-		../sortiesventes/detailssortie-odb.ixx \
-		../sortiesventes/destockage-odb.ixx \
 		../include/sortiesventes/echangesortie-odb.hxx \
 		../include/sortiesventes/echangesortie.hxx \
 		../include/sortiesventes/echangesortie.h \
-		../sortiesventes/echangesortie-odb.ixx \
 		../include/personnels.h \
 		../include/docsrelances.h \
 		../gui/models.h \
 		../produits/produits.h \
+		../produits/produit.h \
+		../produits/types.h \
 		../produits/medicament.h \
+		../produits/fournisseur.h \
+		../produits/prixfourn.h \
+		../produits/histprix.h \
+		../produits/emballage.h \
+		../produits/tonnage.h \
 		../produits/article.h \
 		../produits/famille.h \
 		../produits/vues.h \
 		../produits/vues.hxx \
 		../produits/famille.hxx \
+		../produits/produit.hxx \
+		../produits/prixfourn.hxx \
+		../produits/fournisseur.hxx \
+		../produits/tonnage.hxx \
+		../produits/emballage.hxx \
+		../produits/histprix.hxx \
 		../produits/medicament.hxx \
 		../produits/article.hxx \
-		../produits/medicament-odb.hxx \
-		../produits/article-odb.hxx \
-		../produits/famille-odb.hxx \
 		../produits/vues-odb.hxx \
 		../sortiesventes/ventes.h \
-		../sortiesventes/destockage-odb.hxx \
-		../sortiesventes/destockage.hxx \
-		../sortiesventes/destockage.h \
 		../sortiesventes/sortie.h \
-		../sortiesventes/sortie.hxx \
-		../personnels/personnel.hxx \
-		../personnels/personnel.h \
-		../sortiesventes/facture.hxx \
-		../sortiesventes/facture.h \
-		../sortiesventes/reglement.hxx \
-		../sortiesventes/reglement.h \
-		../sortiesventes/detailssortie.hxx \
-		../sortiesventes/detailssortie.h \
-		../personnels/personnel-odb.hxx \
-		../sortiesventes/detailssortie-odb.hxx \
-		../sortiesventes/facture-odb.hxx \
-		../sortiesventes/reglement-odb.hxx \
-		../sortiesventes/sortie-odb.hxx \
-		../sortiesventes/echangesortie-odb.hxx \
-		../sortiesventes/echangesortie.hxx \
-		../sortiesventes/echangesortie.h \
 		../inventaires/inventaires.h \
 		../inventaires/inventory.h \
 		../inventaires/inventory_item.h \
-		../inventaires/inventory-odb.hxx \
-		../inventaires/inventory.hxx \
-		../inventaires/inventory_item.hxx \
-		../inventaires/inventory_item-odb.hxx \
-		../inventaires/inventory_item-odb.ixx \
-		../inventaires/inventory-odb.ixx \
 		../gui/views.h \
 		../gui/mainwindow.h \
-		../gui/ui_mainwindow.h \
 		../gui/salesdialog.h \
-		../gui/ui_salesdialog.h \
-		../gui/toolkit.h \
 		../gui/tabdialog.h \
-		../gui/ui_tabdialog.h \
 		../gui/reportingdialog.h \
 		../gui/ui_reportingdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o main.cpp

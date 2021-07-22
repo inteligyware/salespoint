@@ -116,104 +116,116 @@ sub-docsrelances-install_subtargets: FORCE
 sub-docsrelances-uninstall_subtargets: FORCE
 	@test -d docsrelances/ || mkdir -p docsrelances/
 	cd docsrelances/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/docsrelances/docsrelances.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile uninstall
-sub-gui-qmake_all:  FORCE
+sub-gui-qmake_all: sub-sortiesventes-qmake_all sub-produits-qmake_all sub-docsrelances-qmake_all sub-personnels-qmake_all sub-inventaires-qmake_all FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64
 	cd gui/ && $(MAKE) -f Makefile qmake_all
-sub-gui: FORCE
+sub-gui: sub-sortiesventes \
+		sub-produits \
+		sub-docsrelances \
+		sub-personnels \
+		sub-inventaires FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile
-sub-gui-make_first: FORCE
+sub-gui-make_first: sub-sortiesventes-make_first sub-produits-make_first sub-docsrelances-make_first sub-personnels-make_first sub-inventaires-make_first FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile 
-sub-gui-all: FORCE
+sub-gui-all: sub-sortiesventes-all sub-produits-all sub-docsrelances-all sub-personnels-all sub-inventaires-all FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile all
-sub-gui-clean: FORCE
+sub-gui-clean: sub-sortiesventes-clean sub-produits-clean sub-docsrelances-clean sub-personnels-clean sub-inventaires-clean FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile clean
-sub-gui-distclean: FORCE
+sub-gui-distclean: sub-sortiesventes-distclean sub-produits-distclean sub-docsrelances-distclean sub-personnels-distclean sub-inventaires-distclean FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile distclean
-sub-gui-install_subtargets: FORCE
+sub-gui-install_subtargets: sub-sortiesventes-install_subtargets sub-produits-install_subtargets sub-docsrelances-install_subtargets sub-personnels-install_subtargets sub-inventaires-install_subtargets FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile install
-sub-gui-uninstall_subtargets: FORCE
+sub-gui-uninstall_subtargets: sub-sortiesventes-uninstall_subtargets sub-produits-uninstall_subtargets sub-docsrelances-uninstall_subtargets sub-personnels-uninstall_subtargets sub-inventaires-uninstall_subtargets FORCE
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile uninstall
-sub-sortiesventes-qmake_all:  FORCE
+sub-sortiesventes-qmake_all: sub-produits-qmake_all sub-personnels-qmake_all sub-docsrelances-qmake_all FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64
 	cd sortiesventes/ && $(MAKE) -f Makefile qmake_all
-sub-sortiesventes: FORCE
+sub-sortiesventes: sub-produits \
+		sub-personnels \
+		sub-docsrelances FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile
-sub-sortiesventes-make_first: FORCE
+sub-sortiesventes-make_first: sub-produits-make_first sub-personnels-make_first sub-docsrelances-make_first FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile 
-sub-sortiesventes-all: FORCE
+sub-sortiesventes-all: sub-produits-all sub-personnels-all sub-docsrelances-all FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile all
-sub-sortiesventes-clean: FORCE
+sub-sortiesventes-clean: sub-produits-clean sub-personnels-clean sub-docsrelances-clean FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile clean
-sub-sortiesventes-distclean: FORCE
+sub-sortiesventes-distclean: sub-produits-distclean sub-personnels-distclean sub-docsrelances-distclean FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile distclean
-sub-sortiesventes-install_subtargets: FORCE
+sub-sortiesventes-install_subtargets: sub-produits-install_subtargets sub-personnels-install_subtargets sub-docsrelances-install_subtargets FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile install
-sub-sortiesventes-uninstall_subtargets: FORCE
+sub-sortiesventes-uninstall_subtargets: sub-produits-uninstall_subtargets sub-personnels-uninstall_subtargets sub-docsrelances-uninstall_subtargets FORCE
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile uninstall
-sub-ipharma-qmake_all:  FORCE
+sub-ipharma-qmake_all: sub-gui-qmake_all sub-sortiesventes-qmake_all sub-produits-qmake_all sub-docsrelances-qmake_all sub-personnels-qmake_all sub-inventaires-qmake_all FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64
 	cd ipharma/ && $(MAKE) -f Makefile qmake_all
-sub-ipharma: FORCE
+sub-ipharma: sub-gui \
+		sub-sortiesventes \
+		sub-produits \
+		sub-docsrelances \
+		sub-personnels \
+		sub-inventaires FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile
-sub-ipharma-make_first: FORCE
+sub-ipharma-make_first: sub-gui-make_first sub-sortiesventes-make_first sub-produits-make_first sub-docsrelances-make_first sub-personnels-make_first sub-inventaires-make_first FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile 
-sub-ipharma-all: FORCE
+sub-ipharma-all: sub-gui-all sub-sortiesventes-all sub-produits-all sub-docsrelances-all sub-personnels-all sub-inventaires-all FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile all
-sub-ipharma-clean: FORCE
+sub-ipharma-clean: sub-gui-clean sub-sortiesventes-clean sub-produits-clean sub-docsrelances-clean sub-personnels-clean sub-inventaires-clean FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile clean
-sub-ipharma-distclean: FORCE
+sub-ipharma-distclean: sub-gui-distclean sub-sortiesventes-distclean sub-produits-distclean sub-docsrelances-distclean sub-personnels-distclean sub-inventaires-distclean FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile distclean
-sub-ipharma-install_subtargets: FORCE
+sub-ipharma-install_subtargets: sub-gui-install_subtargets sub-sortiesventes-install_subtargets sub-produits-install_subtargets sub-docsrelances-install_subtargets sub-personnels-install_subtargets sub-inventaires-install_subtargets FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile install
-sub-ipharma-uninstall_subtargets: FORCE
+sub-ipharma-uninstall_subtargets: sub-gui-uninstall_subtargets sub-sortiesventes-uninstall_subtargets sub-produits-uninstall_subtargets sub-docsrelances-uninstall_subtargets sub-personnels-uninstall_subtargets sub-inventaires-uninstall_subtargets FORCE
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile uninstall
-sub-inventaires-qmake_all:  FORCE
+sub-inventaires-qmake_all: sub-produits-qmake_all sub-personnels-qmake_all FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64
 	cd inventaires/ && $(MAKE) -f Makefile qmake_all
-sub-inventaires: FORCE
+sub-inventaires: sub-produits \
+		sub-personnels FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile
-sub-inventaires-make_first: FORCE
+sub-inventaires-make_first: sub-produits-make_first sub-personnels-make_first FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile 
-sub-inventaires-all: FORCE
+sub-inventaires-all: sub-produits-all sub-personnels-all FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile all
-sub-inventaires-clean: FORCE
+sub-inventaires-clean: sub-produits-clean sub-personnels-clean FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile clean
-sub-inventaires-distclean: FORCE
+sub-inventaires-distclean: sub-produits-distclean sub-personnels-distclean FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile distclean
-sub-inventaires-install_subtargets: FORCE
+sub-inventaires-install_subtargets: sub-produits-install_subtargets sub-personnels-install_subtargets FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile install
-sub-inventaires-uninstall_subtargets: FORCE
+sub-inventaires-uninstall_subtargets: sub-produits-uninstall_subtargets sub-personnels-uninstall_subtargets FORCE
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile uninstall
 
@@ -226,7 +238,41 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri \
@@ -258,6 +304,8 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri \
@@ -271,6 +319,9 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri \
+		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf \
 		/usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf \
@@ -299,7 +350,41 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri:
@@ -331,6 +416,8 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri:
@@ -344,6 +431,9 @@ Makefile: salespoint.pro /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmak
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri:
+/usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf:
 /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf:
@@ -385,16 +475,16 @@ sub-produits-check:
 sub-docsrelances-check:
 	@test -d docsrelances/ || mkdir -p docsrelances/
 	cd docsrelances/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/docsrelances/docsrelances.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile check
-sub-gui-check:
+sub-gui-check: sub-sortiesventes-check sub-produits-check sub-docsrelances-check sub-personnels-check sub-inventaires-check
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile check
-sub-sortiesventes-check:
+sub-sortiesventes-check: sub-produits-check sub-personnels-check sub-docsrelances-check
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile check
-sub-ipharma-check:
+sub-ipharma-check: sub-gui-check sub-sortiesventes-check sub-produits-check sub-docsrelances-check sub-personnels-check sub-inventaires-check
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile check
-sub-inventaires-check:
+sub-inventaires-check: sub-produits-check sub-personnels-check
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile check
 check: sub-personnels-check sub-produits-check sub-docsrelances-check sub-gui-check sub-sortiesventes-check sub-ipharma-check sub-inventaires-check
@@ -408,16 +498,16 @@ sub-produits-benchmark:
 sub-docsrelances-benchmark:
 	@test -d docsrelances/ || mkdir -p docsrelances/
 	cd docsrelances/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/docsrelances/docsrelances.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile benchmark
-sub-gui-benchmark:
+sub-gui-benchmark: sub-sortiesventes-benchmark sub-produits-benchmark sub-docsrelances-benchmark sub-personnels-benchmark sub-inventaires-benchmark
 	@test -d gui/ || mkdir -p gui/
 	cd gui/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/gui/gui.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile benchmark
-sub-sortiesventes-benchmark:
+sub-sortiesventes-benchmark: sub-produits-benchmark sub-personnels-benchmark sub-docsrelances-benchmark
 	@test -d sortiesventes/ || mkdir -p sortiesventes/
 	cd sortiesventes/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/sortiesventes/sortiesventes.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile benchmark
-sub-ipharma-benchmark:
+sub-ipharma-benchmark: sub-gui-benchmark sub-sortiesventes-benchmark sub-produits-benchmark sub-docsrelances-benchmark sub-personnels-benchmark sub-inventaires-benchmark
 	@test -d ipharma/ || mkdir -p ipharma/
 	cd ipharma/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/ipharma/ipharma.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile benchmark
-sub-inventaires-benchmark:
+sub-inventaires-benchmark: sub-produits-benchmark sub-personnels-benchmark
 	@test -d inventaires/ || mkdir -p inventaires/
 	cd inventaires/ && ( test -e Makefile || $(QMAKE) -o Makefile /home/benes/Workspace/study/salespoint/inventaires/inventaires.pro -spec linux-g++-64 ) && $(MAKE) -f Makefile benchmark
 benchmark: sub-personnels-benchmark sub-produits-benchmark sub-docsrelances-benchmark sub-gui-benchmark sub-sortiesventes-benchmark sub-ipharma-benchmark sub-inventaires-benchmark
@@ -432,7 +522,7 @@ dist: distdir FORCE
 
 distdir: sub-personnels-distdir sub-produits-distdir sub-docsrelances-distdir sub-gui-distdir sub-sortiesventes-distdir sub-ipharma-distdir sub-inventaires-distdir FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
-	$(COPY_FILE) --parents AUTHORS LICENSE README.md /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/sanitize.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/gcc-base.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/gcc-base-unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_edid_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_fb_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_glx_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_svg.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf .qmake.stash /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qmake_use.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/file_copies.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf salespoint.pro $(DISTDIR)/
+	$(COPY_FILE) --parents AUTHORS LICENSE README.md /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_pre.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/linux.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/sanitize.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/gcc-base.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/gcc-base-unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-base.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/common/g++-unix.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/qconfig.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Attica.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Baloo.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KArchive.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuth.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KAuthCore.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KBookmarks.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCodecs.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCompletion.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigCore.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigGui.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KConfigWidgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KCoreAddons.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KDBusAddons.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGlobalAccel.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KGuiAddons.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KHtml.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KI18n.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIconThemes.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOCore.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOFileWidgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOGui.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KIOWidgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KItemViews.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJobWidgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJS.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KJSApi.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNotifications.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KNTLM.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KParts.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KService.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KTextWidgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWallet.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWidgetsAddons.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KWindowSystem.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_KXmlGui.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_accessibility_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_bootstrap_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_concurrent_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_core_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_dbus_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_devicediscovery_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_edid_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_egl_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfs_kms_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eglfsdeviceintegration_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_eventdispatcher_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_fb_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_fontdatabase_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_glx_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_gui_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_input_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_kms_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_linuxaccessibility_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_network_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_opengl_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_openglextensions_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_platformcompositor_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_printsupport_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_script.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_scripttools.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_service_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_sql_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_svg.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_testlib_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_theme_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_vulkan_support_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_widgets_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xcb_qpa_lib_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_lib_xml_private.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_Solid.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetCore.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/modules/qt_SonnetUi.pri /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_functions.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qt_config.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/linux-g++-64/qmake.conf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/spec_post.prf .qmake.stash /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exclusive_builds.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/toolchain.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_pre.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/resolve_config.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/default_post.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/warn_on.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/qmake_use.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/file_copies.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/testcase_targets.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/exceptions.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/yacc.prf /usr/lib/x86_64-linux-gnu/qt5/mkspecs/features/lex.prf salespoint.pro $(DISTDIR)/
 
 sub-personnels-distdir: FORCE
 	@test -d personnels/ || mkdir -p personnels/

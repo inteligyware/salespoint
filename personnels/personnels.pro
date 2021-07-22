@@ -5,11 +5,9 @@
 #-------------------------------------------------
 
 QT       -= gui
-
 TARGET = personnels
-
 TEMPLATE = lib
-
+VERSION = 0.1
 DEFINES += PERSONNELS_LIBRARY
 
 SOURCES += \
@@ -44,7 +42,7 @@ ODB_FLAGS =\
     --database pgsql \
     --sql-name-case lower \
     --profile qt \
-    --default-pointer QSharedPointer \
+    --hxx-prologue-file "../default_ptr.hxx" \
     --generate-query \
     --generate-session
 

@@ -7,6 +7,7 @@
 QT      -= gui
 TARGET   = inventaires
 TEMPLATE = lib
+VERSION = 0.1
 DEFINES += INVENTAIRES_LIBRARY
 
 SOURCES +=\
@@ -18,7 +19,7 @@ HEADERS  += \
     inventory_item.h
 
 unix {
-    target.path = /usr/lib
+    target.path = /usr/local/salespoint/lib
     INSTALLS += target
 }
 
@@ -27,6 +28,11 @@ INCLUDEPATH +=\
     ../personnels \
     .. \
     .
+
+LIBS +=\
+    -L"../produits" -lproduits \
+    -L"../personnels" -lpersonnels \
+    -L"../docsrelances" -ldocsrelances
 
 ##ODB parameters starts here
 
@@ -43,7 +49,7 @@ ODB_FLAGS =\
     --database pgsql \
     --sql-name-case lower \
     --profile qt \
-    --default-pointer QSharedPointer \
+    --hxx-prologue-file "../default_ptr.hxx" \
     --generate-query \
     --generate-session
 
@@ -88,3 +94,11 @@ odbh.commands = @true
 odbh.CONFIG = no_link
 odbh.depends = ${QMAKE_FILE_BASE}-odb.cxx
 QMAKE_EXTRA_COMPILERS += odbh
+
+odbi.name = odb ${QMAKE_FILE_IN}
+odbi.input = ODB_PWD_FILES
+odbi.output = ${QMAKE_FILE_BASE}-odb.ixx
+odbi.commands = @true
+odbi.CONFIG = no_link
+odbi.depends = ${QMAKE_FILE_BASE}-odb.cxx
+QMAKE_EXTRA_COMPILERS += odbi

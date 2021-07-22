@@ -7,9 +7,8 @@
 greaterThan(QT_MAJOR_VERSION, 4): QT += printsupport
 
 TARGET = docsrelances
-
 TEMPLATE = lib
-
+VERSION = 0.1
 DEFINES += DOCSRELANCES_LIBRARY
 
 SOURCES +=\
@@ -43,7 +42,7 @@ ODB_FLAGS =\
     --database pgsql \
     --sql-name-case lower \
     --profile qt \
-    --default-pointer QSharedPointer \
+    --hxx-prologue-file "../default_ptr.hxx" \
     --generate-query \
     --generate-session
 

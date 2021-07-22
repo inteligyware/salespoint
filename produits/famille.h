@@ -50,12 +50,12 @@ public:
     void setDescription(const QString& description);
     const QString&  getDescription() const;
 
-    const odb::vector<SPFamille> &getChildren() const;
+    odb::vector<SPFamille> getChildren() const;
 
     void setParent(const SPFamille& parent);
     const SPFamille& parent() const ;
 
-    const SPFamille& childAt(int pos) const ;
+    SPFamille childAt(int pos) const ;
     bool isChild() const ;
 };
 

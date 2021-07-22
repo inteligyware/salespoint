@@ -7,7 +7,7 @@
 QT     += widgets sql
 TARGET = gui
 TEMPLATE = lib
-
+VERSION = 0.1
 DEFINES += GUI_LIBRARY
 
 SOURCES += \

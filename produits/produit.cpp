@@ -9,9 +9,9 @@
 #include "histprix-odb.hxx"
 #include "emballage-odb.hxx"
 
-#include <QtCore/QString>
-#include <QtCore/QDate>
-#include <QtCore/QSharedPointer>
+#include <QString>
+#include <QDate>
+#include <QSharedPointer>
 
 #include <odb/vector.hxx>
 #include <odb/qt/lazy-ptr.hxx>
@@ -239,7 +239,7 @@ const QVector<SPProduit> Produit::getChildren() const{
    QVector<SPProduit> children;
    for(auto child : children_)
        children.push_back(child.load());
-   return std::move(children);
+   return children;
 }
 
 const SPProduit Produit::childAt(int pos) const {

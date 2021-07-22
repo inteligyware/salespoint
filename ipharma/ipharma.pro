@@ -27,6 +27,8 @@ LIBS += -lodb-pgsql
 LIBS += -lodb-qt
 LIBS += -lodb
 
+QMAKE_CLEAN += $$TARGET
+
 QMAKE_CXXFLAGS += -std=c++11 -pedantic-errors -Wall
 
 # Suppress unknown pragmas GCC warnings.

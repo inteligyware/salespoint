@@ -6,7 +6,10 @@
 
 QT       -= gui
 TARGET   = produits
+VERSION = 0.1
 TEMPLATE = lib
+INCLUDEPATH += /usr/include/x86_64-linux-gnu/qt5 \
+               /usr/include/x86_64-linux-gnu/qt5/QtCore
 
 DEFINES += PRODUITS_LIBRARY
 
@@ -62,7 +65,7 @@ ODB_FLAGS =\
     --database pgsql \
     --sql-name-case lower \
     --profile qt \
-    --hxx-prologue-file "../pointer-par-defaut.hxx" \
+    --hxx-prologue-file "../default_ptr.hxx" \
     --generate-query \
     --generate-session
 
