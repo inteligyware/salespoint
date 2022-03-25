@@ -15,8 +15,7 @@
  */
 
 
-Medicament::Medicament() {}
-Medicament::~Medicament() {}
+
 
 Medicament::Medicament(const QString& CIP,
                  const QString& libele,

@@ -1,4 +1,5 @@
 #include "toolkit.h"
+#include <cmath>
 #include <QValidator>
 #include <QKeyEvent>
 

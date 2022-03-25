@@ -31,7 +31,12 @@ class HistPrix;
 
 class Produit:  public QEnableSharedFromThis<Produit>{
 
+    Produit& operator=(const Produit&) = delete;
+    Produit(const Produit&) = delete;
+
 protected:
+
+    Produit(){}
     static float scoef_;
     static quint8 arrondi_;
 
@@ -57,7 +62,6 @@ protected:
     friend class DetailsSortie;
     friend void setProduitId(SPProduit& , ulong);
 
-    Produit();
     void setId(ulong id);
     void setPrixfourns(const LWPPrixFourn& prixfourn);
     void setTonnages(const LWPTonnage& tonnage);
@@ -70,12 +74,17 @@ protected:
 
 public:
 
-    Produit(const QString& libele,
-        float qtecolise = 1,
-        SPProduit parent = SPProduit {NULL}
-        );
+     Produit(const QString& libele,
+            float qtecolise = 1,
+            SPProduit parent = SPProduit {nullptr}
+     );
 
-    virtual ~Produit();
+     virtual ~Produit() {
+         prixfourns_.clear();
+         children_.clear();
+         tonnages_.clear();
+         hist_prixs_.clear();
+     }
 
     virtual QString type() const = 0;
 
@@ -123,7 +132,7 @@ public:
     const odb::vector<LWPHistPrix >& getHistPrix() const;
 
     const SPProduit& parent() const ;
-    const QVector<SPProduit> getChildren() const;
+    QVector<SPProduit> getChildren() const;
 
     const SPProduit childAt(int pos) const;
     bool isChild() const;

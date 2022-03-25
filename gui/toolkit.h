@@ -1,6 +1,5 @@
 #ifndef CURRENCYEDIT_H
 #define CURRENCYEDIT_H
-#include <cmath>
 #include <QLineEdit>
 
 class CurrencyEdit : public QLineEdit

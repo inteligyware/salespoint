@@ -25,18 +25,13 @@
 float Produit::scoef_ = 1.25;
 quint8 Produit::arrondi_ = 25;
 
-Produit::Produit() {}
-Produit::~Produit() {
-    prixfourns_.clear();
-    children_.clear();
-    tonnages_.clear();
-    hist_prixs_.clear();
-}
-
 Produit::Produit(const QString& libele,
                  float qtecolise,
-                 SPProduit parent): prix_achat_moy_{0},remise_{0}, qte_colise_{1}, parent_{parent}
-{
+                 SPProduit parent):
+    prix_achat_moy_{0},
+    remise_{0},
+    qte_colise_{1},
+    parent_{parent}{
     setId(0);
     setLibele(libele);
     if(!parent.isNull()){
@@ -235,7 +230,7 @@ const SPProduit& Produit::parent() const{
     return getParent();
 }
 
-const QVector<SPProduit> Produit::getChildren() const{
+QVector<SPProduit> Produit::getChildren() const{
    QVector<SPProduit> children;
    for(auto child : children_)
        children.push_back(child.load());

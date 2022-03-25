@@ -4,6 +4,9 @@
  * @version 1.0
  */
 
+#include <QtCore/QString>
+
+
 #include "document.h"
 #include "document-odb.hxx"
 

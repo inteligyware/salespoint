@@ -16,30 +16,28 @@
 using namespace std;
 
 class Medicament : public Produit{
-
-private:
-
-    QString CIP_;
-
-    friend class odb::access;
-    Medicament();
-    void setCIP(const QString& CIP);
-
 public:
-
-   Medicament(
+    Medicament(
         const QString& CIP,
         const QString& libele,
-           float qtecolise = 1,
-           SPProduit parent = SPProduit {NULL}
+        float qtecolise = 1,
+        SPProduit parent = SPProduit {NULL}
         );
 
-    virtual ~Medicament();
+    virtual ~Medicament(){}
+
     const QString& getCIP() const;
     void setReference(const QString& ref);
     const QString& getReference() const;
     QString getLibeleFamille() const;
     QString type() const;
+
+private:
+    Medicament() {}
+    QString CIP_;
+    friend class odb::access;
+    void setCIP(const QString& CIP);
+
 };
 
 //struct ViewMedicament{

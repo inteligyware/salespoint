@@ -7,9 +7,10 @@
 #ifndef _DOCUMENT_H
 #define _DOCUMENT_H
 
-#include <QtCore/QString>
 #include <odb/core.hxx>
+#include <QtCore/QString>
 
+class QString;
 class Document {
 protected:
 

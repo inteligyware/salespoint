@@ -37,7 +37,7 @@ public:
     const QString& getDescription() const;
     void setDescription(const QString& description);
 
-    const odb::vector<LWPTonnage >& getTonnages() const;
+    const odb::vector<LWPTonnage>& getTonnages() const;
 
 };
 
