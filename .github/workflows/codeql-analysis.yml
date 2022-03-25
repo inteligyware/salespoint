@@ -60,9 +60,6 @@ jobs:
       run: |
         make bootstrap
         make release
-        
-        #qmake -o Makefile salespoint.pro -spec linux-g++-64
-        #make -j 4
 
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 https://git.io/JvXDl
